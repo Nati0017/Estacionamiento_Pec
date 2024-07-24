@@ -42,3 +42,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
+
+  $(document).ready(function() {
+    // Obtener los estacionamientos disponibles desde el servidor
+    $.get('/api/parking-lots/', function(data) {
+      // Llenar la lista desplegable con los estacionamientos disponibles
+      var parkingLotSelect = $('#parkingLot');
+      data.forEach(function(parkingLot) {
+        parkingLotSelect.append('<option value="' + parkingLot.id + '">' + parkingLot.nombre + '</option>');
+      });
+    });
+  
+    // Agregar un manejador de eventos para el formulario de reserva
+    $('#reservationForm').on('submit', function(event) {
+      event.preventDefault();
+  
+      // Obtener los valores del formulario
+      var formData = {
+        name: $('#name').val(),
+        email: $('#email').val(),
+        parking_lot: $('#parkingLot').val()
+      };
+  
+      // Enviar la reserva al servidor
+      $.post('/api/reservations/', formData, function(response) {
+        // Manipular la respuesta del servidor
+        console.log(response);
+        // Limpiar el formulario
+        $('#reservationForm')[0].reset();
+      });
+    });
+  });
