@@ -2,7 +2,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #2b4bdb;
     margin: 0;
     padding: 0;
   }
@@ -13,15 +13,16 @@ body {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(3, 228, 216, 0.1);
   }
   
   h1, h2 {
-    text-align: center;
-    color: #333;
+    text-align: flex;
+    color: #e9360a;
   }
   
   .parking-lots {
+    border: black;
     margin-bottom: 20px;
   }
   
@@ -32,12 +33,15 @@ body {
   
   li {
     margin-bottom: 10px;
+    color: blueviolet;
   }
   
   .reservation-form {
     background-color: #f9f9f9;
     padding: 15px;
     border-radius: 8px;
+    border-color: chocolate;
+    border-style: double;
   }
   
   label {
