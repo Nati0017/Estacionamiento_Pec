@@ -1,6 +1,6 @@
-import React from 'react';
 
-import './ParkingReservation.css'; 
+import { useState } from 'react';
+
 
 const ParkingReservation = () => {
   const [selectedParking, setSelectedParking] = useState(null);

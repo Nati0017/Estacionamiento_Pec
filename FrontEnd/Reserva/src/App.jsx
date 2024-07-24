@@ -1,7 +1,6 @@
-// src/App.jsx
 
-import React from 'react';
 import ParkingReservation from './components/ParkingReservation';
+
 
 function App() {
   return (
